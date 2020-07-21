@@ -1,3 +1,5 @@
+import { ProductListComponent } from './product-list/product-list.component';
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
