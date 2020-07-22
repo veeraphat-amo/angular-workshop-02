@@ -32,14 +32,14 @@
         </thead>
         <tbody *ngIf="products.length > 0">
           <tr *ngFor="let product of products | product: filterData">
-            <th>
-              {{product.imageUrl}}
-            </th>
+            <th>{{product.imageUrl}}</th>
             <th>{{product.code}}</th>
             <th>{{product.name | productName: ' ' | uppercase}}</th>
             <th>{{product.price | number : '.2'}}</th>
             <th>{{product.available}}</th>
-            <th>{{product.rating}}</th>
+            <th>
+              <app-rating (ratingClicked)="onRatingClicked($event)" [rating]="product.rating"></app-rating>
+            </th>
           </tr>
         </tbody>
         <tbody *ngIf="products.length === 0">

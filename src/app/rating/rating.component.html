@@ -1,13 +1,11 @@
-<div 
-  [style.width.px]="starWidth" 
-  style="overflow: hidden;"
-  (click)="onClickRating()"
->
-    <div style="width: 75px;">
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-    </div>
+<div [style.width.px]="starWidth" style="overflow: hidden;" (click)="onClickRating()">
+    <span style="cursor:pointer">
+        <div style="width: 75px;">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+    </span>
 </div>
