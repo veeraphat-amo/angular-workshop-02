@@ -123,6 +123,6 @@
   },
   "defaultProject": "product-app",
   "cli": {
-    "analytics": false
+    "analytics": "8cbeabf7-d734-4270-916e-5427977ef39b"
   }
 }

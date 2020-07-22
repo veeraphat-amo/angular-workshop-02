@@ -1,29 +1,25 @@
-<div class="card">
-  <div class="card-header">
+<div class='card'>
+  <div class='card-header'>
     List of Product Page
   </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-2">Filter by:</div>
-      <div class="col-md-4">
-        <select>
-          <option>Choosing</option>
-          <option>TODO</option>
-          <option>TODO</option>
-        </select>
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-2'>Filter by:</div>
+      <div class='col-md-4'>
+        <input type="text" [(ngModel)]="filterData">
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        Filtered by ...
+    <div class='row'>
+      <div class='col-md-6'>
+        Filtered by {{ filterData }}
       </div>
     </div>
-    <div class="table-responsive">
-      <table class="table">
+    <div class='table-responsive'>
+      <table class='table'>
         <thead>
           <tr>
             <th>
-              <button class="btn btn-primary">
+              <button class='btn btn-primary'>
                 Product Image
               </button>
             </th>
@@ -35,22 +31,20 @@
           </tr>
         </thead>
         <tbody *ngIf="products.length > 0">
-          <tr *ngFor="let product of products">
+          <tr *ngFor="let product of products | product: filterData">
             <th>
-              XXX
+              {{product.imageUrl}}
             </th>
-            <th>{{ product.code }}</th>
-            <th>{{ product.name }}</th>
-            <th>{{ product.price }}</th>
-            <th>Yes</th>
-            <th>****</th>
+            <th>{{product.code}}</th>
+            <th>{{product.name | productName: ' ' | uppercase}}</th>
+            <th>{{product.price | number : '.2'}}</th>
+            <th>{{product.available}}</th>
+            <th>{{product.rating}}</th>
           </tr>
         </tbody>
-        <tbody *ngIf="products.length == 0">
+        <tbody *ngIf="products.length === 0">
           <tr>
-            <th>
-              ไม่มีข้อมูลสินค้า
-            </th>
+            <th> No products to show </th>
           </tr>
         </tbody>
       </table>
