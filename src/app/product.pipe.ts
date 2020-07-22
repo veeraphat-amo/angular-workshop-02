@@ -6,9 +6,9 @@ import { Product } from './models/product'
 })
 export class ProductPipe implements PipeTransform {
 
-  transform(products: Product[], name: string): unknown {
-    if (!name) return products
-    return products.filter(p => p.name.indexOf(name) != -1);
+  transform(products: Product[], name: string): Product[] {
+    
+    return products.filter((p) => p.name.indexOf(name) != -1);
   }
 
 }
